@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Website - Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-['Roboto'] text-gray-800">
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">
+        <i class="fas fa-school mr-2"></i>Sunshine School
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="classes.html" class="hover:underline font-semibold underline">Classes</a></li>
+          <li><a href="registration.html" class="hover:underline">Registration</a></li>
+          <li><a href="student-portal.html" class="hover:underline">Student Portal</a></li>
+          <li><a href="parent-portal.html" class="hover:underline">Parent Portal</a></li>
+          <li><a href="teachers.html" class="hover:underline">Teachers</a></li>
+          <li><a href="events.html" class="hover:underline">Events</a></li>
+          <li><a href="news.html" class="hover:underline">News</a></li>
+          <li><a href="resources.html" class="hover:underline">Resources</a></li>
+          <li><a href="extracurricular.html" class="hover:underline">Extra-Curricular</a></li>
+          <li><a href="interactive.html" class="hover:underline">Interactive</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h1 class="text-4xl font-extrabold mb-8 text-center">Class Information</h1>
+    <p class="text-center mb-12 max-w-3xl mx-auto">
+      Explore curriculum details, classroom resources, and announcements for each grade from 1 to 12.
+    </p>
+
+    <div class="space-y-8">
+      <!-- Example for Class 1 -->
+      <section class="bg-white p-6 rounded shadow">
+        <h2 class="text-2xl font-semibold mb-4">Class 1</h2>
+        <h3 class="font-semibold mb-2">Curriculum</h3>
+        <ul class="list-disc list-inside mb-4">
+          <li>Mathematics: Basic arithmetic and shapes</li>
+          <li>English: Reading and writing fundamentals</li>
+          <li>Science: Introduction to plants and animals</li>
+        </ul>
+        <h3 class="font-semibold mb-2">Classroom Resources</h3>
+        <ul class="list-disc list-inside mb-4">
+          <li><a href="#" class="text-blue-700 hover:underline">Class 1 Textbook PDF</a></li>
+          <li><a href="#" class="text-blue-700 hover:underline">Interactive Learning Videos</a></li>
+        </ul>
+        <h3 class="font-semibold mb-2">Announcements</h3>
+        <ul class="list-disc list-inside">
+          <li>Parent-teacher meeting on 15th March</li>
+          <li>Field trip scheduled for 22nd March</li>
+        </ul>
+      </section>
+
+      <!-- Repeat similar sections for Classes 2 to 12 -->
+      <section class="bg-white p-6 rounded shadow">
+        <h2 class="text-2xl font-semibold mb-4">Class 2</h2>
+        <h3 class="font-semibold mb-2">Curriculum</h3>
+        <ul class="list-disc list-inside mb-4">
+          <li>Mathematics: Addition, subtraction, and basic geometry</li>
+          <li>English: Sentence formation and vocabulary building</li>
+          <li>Science: Weather and seasons</li>
+        </ul>
+        <h3 class="font-semibold mb-2">Classroom Resources</h3>
+        <ul class="list-disc list-inside mb-4">
+          <li><a href="#" class="text-blue-700 hover:underline">Class 2 Textbook PDF</a></li>
+          <li><a href="#" class="text-blue-700 hover:underline">Science Experiment Videos</a></li>
+        </ul>
+        <h3 class="font-semibold mb-2">Announcements</h3>
+        <ul class="list-disc list-inside">
+          <li>Science fair on 10th April</li>
+          <li>Sports day registration open</li>
+        </ul>
+      </section>
+
+      <!-- For brevity, only two classes shown here. In actual implementation, classes 3 to 12 would be similarly structured -->
+    </div>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-16">
+    &copy; 2024 Sunshine School. All rights reserved.
+  </footer>
+</body>
+</html>
