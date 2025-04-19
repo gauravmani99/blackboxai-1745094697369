@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Website - Online Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-['Roboto'] text-gray-800">
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">
+        <i class="fas fa-school mr-2"></i>Sunshine School
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="classes.html" class="hover:underline">Classes</a></li>
+          <li><a href="registration.html" class="hover:underline font-semibold underline">Registration</a></li>
+          <li><a href="student-portal.html" class="hover:underline">Student Portal</a></li>
+          <li><a href="parent-portal.html" class="hover:underline">Parent Portal</a></li>
+          <li><a href="teachers.html" class="hover:underline">Teachers</a></li>
+          <li><a href="events.html" class="hover:underline">Events</a></li>
+          <li><a href="news.html" class="hover:underline">News</a></li>
+          <li><a href="resources.html" class="hover:underline">Resources</a></li>
+          <li><a href="extracurricular.html" class="hover:underline">Extra-Curricular</a></li>
+          <li><a href="interactive.html" class="hover:underline">Interactive</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6 max-w-4xl">
+    <h1 class="text-4xl font-extrabold mb-8 text-center">Online Registration</h1>
+    <p class="text-center mb-12">
+      Please fill out the forms below to register for new admissions or upcoming events.
+    </p>
+
+    <section class="bg-white p-6 rounded shadow mb-12">
+      <h2 class="text-2xl font-semibold mb-4">New Admissions</h2>
+      <form class="space-y-4" onsubmit="event.preventDefault(); alert('Admission form submitted!');">
+        <div>
+          <label for="studentName" class="block font-medium mb-1">Student Name</label>
+          <input type="text" id="studentName" name="studentName" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="grade" class="block font-medium mb-1">Grade Applying For</label>
+          <select id="grade" name="grade" required class="w-full border border-gray-300 rounded px-3 py-2">
+            <option value="">Select Grade</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+        </div>
+        <div>
+          <label for="parentName" class="block font-medium mb-1">Parent/Guardian Name</label>
+          <input type="text" id="parentName" name="parentName" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="contactEmail" class="block font-medium mb-1">Contact Email</label>
+          <input type="email" id="contactEmail" name="contactEmail" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="contactPhone" class="block font-medium mb-1">Contact Phone</label>
+          <input type="tel" id="contactPhone" name="contactPhone" class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded shadow hover:bg-blue-800 transition">Submit Admission Form</button>
+      </form>
+    </section>
+
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-4">Event Sign-Up</h2>
+      <form class="space-y-4" onsubmit="event.preventDefault(); alert('Event sign-up form submitted!');">
+        <div>
+          <label for="eventName" class="block font-medium mb-1">Event</label>
+          <select id="eventName" name="eventName" required class="w-full border border-gray-300 rounded px-3 py-2">
+            <option value="">Select Event</option>
+            <option>Science Fair</option>
+            <option>Sports Day</option>
+            <option>Art Competition</option>
+            <option>Music Festival</option>
+          </select>
+        </div>
+        <div>
+          <label for="participantName" class="block font-medium mb-1">Participant Name</label>
+          <input type="text" id="participantName" name="participantName" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="participantEmail" class="block font-medium mb-1">Email</label>
+          <input type="email" id="participantEmail" name="participantEmail" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded shadow hover:bg-blue-800 transition">Submit Event Sign-Up</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-16">
+    &copy; 2024 Sunshine School. All rights reserved.
+  </footer>
+</body>
+</html>
