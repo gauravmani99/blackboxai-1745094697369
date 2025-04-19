@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Website - Event Calendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 1px;
+      background-color: #1e40af; /* blue-900 */
+      color: white;
+    }
+    .calendar div {
+      background-color: white;
+      color: #1e40af;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    .calendar-header {
+      background-color: #1e40af;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 0;
+    }
+    .event-day {
+      background-color: #bfdbfe; /* blue-200 */
+      cursor: pointer;
+      position: relative;
+    }
+    .event-day:hover .event-tooltip {
+      display: block;
+    }
+    .event-tooltip {
+      display: none;
+      position: absolute;
+      top: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e40af;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-['Roboto'] text-gray-800">
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">
+        <i class="fas fa-school mr-2"></i>Sunshine School
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="classes.html" class="hover:underline">Classes</a></li>
+          <li><a href="registration.html" class="hover:underline">Registration</a></li>
+          <li><a href="student-portal.html" class="hover:underline">Student Portal</a></li>
+          <li><a href="parent-portal.html" class="hover:underline">Parent Portal</a></li>
+          <li><a href="teachers.html" class="hover:underline">Teachers</a></li>
+          <li><a href="events.html" class="hover:underline font-semibold underline">Events</a></li>
+          <li><a href="news.html" class="hover:underline">News</a></li>
+          <li><a href="resources.html" class="hover:underline">Resources</a></li>
+          <li><a href="extracurricular.html" class="hover:underline">Extra-Curricular</a></li>
+          <li><a href="interactive.html" class="hover:underline">Interactive</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6 max-w-4xl">
+    <h1 class="text-4xl font-extrabold mb-8 text-center">Event Calendar</h1>
+    <p class="text-center mb-8">Hover over event days to see details.</p>
+
+    <div id="calendar" class="calendar">
+      <!-- Calendar headers -->
+      <div class="calendar-header">Sun</div>
+      <div class="calendar-header">Mon</div>
+      <div class="calendar-header">Tue</div>
+      <div class="calendar-header">Wed</div>
+      <div class="calendar-header">Thu</div>
+      <div class="calendar-header">Fri</div>
+      <div class="calendar-header">Sat</div>
+    </div>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-16">
+    &copy; 2024 Sunshine School. All rights reserved.
+  </footer>
+
+  <script>
+    const events = {
+      3: "Science Fair",
+      10: "Sports Day",
+      15: "Parent-Teacher Meeting",
+      22: "Art Competition",
+      28: "Music Festival"
+    };
+
+    const calendar = document.getElementById('calendar');
+
+    // Fill calendar with days for a sample month (e.g., April 2024, starting on Monday)
+    // April 2024 starts on Monday (index 1), 30 days
+    const startDay = 1; // Monday
+    const daysInMonth = 30;
+
+    // Add empty cells for days before startDay
+    for (let i = 0; i < startDay; i++) {
+      const emptyCell = document.createElement('div');
+      calendar.appendChild(emptyCell);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dayCell = document.createElement('div');
+      dayCell.textContent = day;
+
+      if (events[day]) {
+        dayCell.classList.add('event-day');
+        const tooltip = document.createElement('div');
+        tooltip.classList.add('event-tooltip');
+        tooltip.textContent = events[day];
+        dayCell.appendChild(tooltip);
+      }
+
+      calendar.appendChild(dayCell);
+    }
+  </script>
+</body>
+</html>
