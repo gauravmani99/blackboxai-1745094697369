@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Website - Interactive Features</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-['Roboto'] text-gray-800">
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">
+        <i class="fas fa-school mr-2"></i>Sunshine School
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="classes.html" class="hover:underline">Classes</a></li>
+          <li><a href="registration.html" class="hover:underline">Registration</a></li>
+          <li><a href="student-portal.html" class="hover:underline">Student Portal</a></li>
+          <li><a href="parent-portal.html" class="hover:underline">Parent Portal</a></li>
+          <li><a href="teachers.html" class="hover:underline">Teachers</a></li>
+          <li><a href="events.html" class="hover:underline">Events</a></li>
+          <li><a href="news.html" class="hover:underline">News</a></li>
+          <li><a href="resources.html" class="hover:underline">Resources</a></li>
+          <li><a href="extracurricular.html" class="hover:underline">Extra-Curricular</a></li>
+          <li><a href="interactive.html" class="hover:underline font-semibold underline">Interactive</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6 max-w-4xl">
+    <h1 class="text-4xl font-extrabold mb-8 text-center">Interactive Features</h1>
+
+    <!-- Quiz Section -->
+    <section class="bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Quiz: General Knowledge</h2>
+      <form id="quizForm" class="space-y-4">
+        <div>
+          <p class="font-medium">1. What is the capital of France?</p>
+          <label><input type="radio" name="q1" value="Paris" required /> Paris</label><br />
+          <label><input type="radio" name="q1" value="London" /> London</label><br />
+          <label><input type="radio" name="q1" value="Berlin" /> Berlin</label>
+        </div>
+        <div>
+          <p class="font-medium">2. Which planet is known as the Red Planet?</p>
+          <label><input type="radio" name="q2" value="Mars" required /> Mars</label><br />
+          <label><input type="radio" name="q2" value="Venus" /> Venus</label><br />
+          <label><input type="radio" name="q2" value="Jupiter" /> Jupiter</label>
+        </div>
+        <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded shadow hover:bg-blue-800 transition">Submit Quiz</button>
+      </form>
+      <div id="quizResult" class="mt-4 font-semibold"></div>
+    </section>
+
+    <!-- Survey Section -->
+    <section class="bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Survey: Favorite School Activity</h2>
+      <form id="surveyForm" class="space-y-4">
+        <label><input type="radio" name="activity" value="Sports" required /> Sports</label><br />
+        <label><input type="radio" name="activity" value="Music" /> Music</label><br />
+        <label><input type="radio" name="activity" value="Art" /> Art</label><br />
+        <label><input type="radio" name="activity" value="Science Club" /> Science Club</label><br />
+        <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded shadow hover:bg-blue-800 transition">Submit Survey</button>
+      </form>
+      <div id="surveyResult" class="mt-4 font-semibold"></div>
+    </section>
+
+    <!-- Discussion Forum Placeholder -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-4">Discussion Forum</h2>
+      <p>This feature is coming soon. Stay tuned for a platform to discuss topics with students, teachers, and parents.</p>
+    </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-16">
+    &copy; 2024 Sunshine School. All rights reserved.
+  </footer>
+
+  <script>
+    // Quiz form submission
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const answers = {
+        q1: 'Paris',
+        q2: 'Mars'
+      };
+      let score = 0;
+      const formData = new FormData(this);
+      for (const [key, value] of formData.entries()) {
+        if (answers[key] === value) {
+          score++;
+        }
+      }
+      const resultDiv = document.getElementById('quizResult');
+      resultDiv.textContent = `You scored ${score} out of 2.`;
+    });
+
+    // Survey form submission
+    document.getElementById('surveyForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const selected = formData.get('activity');
+      const resultDiv = document.getElementById('surveyResult');
+      resultDiv.textContent = `Thank you for participating! You selected: ${selected}.`;
+    });
+  </script>
+</body>
+</html>
